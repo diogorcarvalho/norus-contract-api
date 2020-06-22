@@ -38,8 +38,6 @@ namespace NorusContract.Services
 
     public Contract Patch(PatchRequest patch)
     {
-      Console.WriteLine(">>> patch.EntityId: " + patch.EntityId.ToString());
-
       var _contract = _contractRepository.Get(patch.EntityId);
 
       if (_contract == null) throw new BusinessException("You must enter a valid contract id");
