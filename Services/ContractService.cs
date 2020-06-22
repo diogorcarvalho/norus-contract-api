@@ -47,7 +47,7 @@ namespace NorusContract.Services
       patch.Field = patch.Field.ToLower();
 
       if (
-        patch.Field.Equals("contractname") == false
+        patch.Field.Equals("customername") == false
         && patch.Field.Equals("contracttype") == false
         && patch.Field.Equals("amount") == false
         && patch.Field.Equals("negotiatedvalue") == false
@@ -58,13 +58,13 @@ namespace NorusContract.Services
         throw new BusinessException("You must enter a valid field");
       }
 
-      if (patch.Field.Equals("contractname"))
+      if (patch.Field.Equals("customername"))
       {
         if (string.IsNullOrWhiteSpace(patch.StringValue)) throw new BusinessException("You must enter a valid contract name");
         
         try
         {
-          _contract.ContractName = patch.StringValue;
+          _contract.CustomerName = patch.StringValue;
           _contractRepository.Patch(_contract);
         }
         catch (Exception ex)

@@ -6,7 +6,7 @@ namespace NorusContract.Domain.Entities
   public class Contract : EntityBase
   {
     public int ContractId { get; set; }
-    public string ContractName { get; set; }
+    public string CustomerName { get; set; }
     public string ContractType { get; set; } // "BUY" || "SELL"
     public int Amount { get; set; }
     public float NegotiatedValue { get; set; }
@@ -16,9 +16,9 @@ namespace NorusContract.Domain.Entities
 
     protected override void Validate()
     {
-      if (string.IsNullOrWhiteSpace(ContractName))
+      if (string.IsNullOrWhiteSpace(CustomerName))
       {
-        AddBrokenRule(new BusinessRule("Contract name is invalid"));
+        AddBrokenRule(new BusinessRule("Customer name is invalid"));
       }
       
       if (string.IsNullOrWhiteSpace(ContractType)|| (ContractType.Equals("SELL") == false && ContractType.Equals("BUY") == false))

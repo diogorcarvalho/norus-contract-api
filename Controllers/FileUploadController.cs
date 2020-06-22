@@ -11,7 +11,7 @@ namespace NorusContract.Api.Controller
   [ApiController]
   public class FileUploadController : ControllerBase
   {
-    [HttpPost, AllowAnonymous, Route("v1/fileupload/pdf")]
+    [HttpPost, Authorize, Route("v1/fileupload/pdf")]
     public async Task<ActionResult<IFileUploadResponse>> PostFile(IFormFile file)
     {
       IFileUploadResponse response;

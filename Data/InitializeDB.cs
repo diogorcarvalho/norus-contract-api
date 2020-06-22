@@ -9,7 +9,7 @@ namespace NorusContract.Date
     public static void Initialize(DataContext context)
     {
       context.Contracts.Add(new Contract {
-        ContractName = "Prospect - venda, empresa X",
+        CustomerName = "Cliente A",
         ContractType = "SELL",
         Amount = 2,
         NegotiatedValue = 2500.0f,
@@ -19,7 +19,7 @@ namespace NorusContract.Date
       });
 
       context.Contracts.Add(new Contract {
-        ContractName = "Pluvia - venda, empresa Y",
+        CustomerName = "Cliente B",
         ContractType = "SELL",
         Amount = 3,
         NegotiatedValue = 3900.0f,
@@ -29,7 +29,7 @@ namespace NorusContract.Date
       });
 
       context.Contracts.Add(new Contract {
-        ContractName = "Ecco - venda, empresa Z",
+        CustomerName = "Cliente C",
         ContractType = "SELL",
         Amount = 4,
         NegotiatedValue = 8150.0f,
@@ -39,7 +39,7 @@ namespace NorusContract.Date
       });
 
       context.Contracts.Add(new Contract {
-        ContractName = "Material de escritório - compra, empresa A",
+        CustomerName = "Cliente D",
         ContractType = "BUY",
         Amount = 15,
         NegotiatedValue = 430.0f,
@@ -49,7 +49,7 @@ namespace NorusContract.Date
       });
 
       context.Contracts.Add(new Contract {
-        ContractName = "Notebooks - aluguél, empresa B",
+        CustomerName = "Cliente E",
         ContractType = "BUY",
         Amount = 3,
         NegotiatedValue = 9450.0f,
@@ -59,7 +59,7 @@ namespace NorusContract.Date
       });
 
       context.Contracts.Add(new Contract {
-        ContractName = "Bolo de aniversário - compra, empresa C",
+        CustomerName = "Cliente F",
         ContractType = "BUY",
         Amount = 1,
         NegotiatedValue = 45.50f,

@@ -25,13 +25,13 @@ namespace NorusContract.Api.Controller
     }
 
     [HttpPost, AllowAnonymous, Route("v1/userCredential")]
-    public ActionResult<LoggedUserCredential> GetLoggedUserCredential([FromBody] AuthenticateRequest payload)
+    public ActionResult<LoggedUserCredential> GetLoggedUserCredential([FromForm] string userName, [FromForm] string password)
     {
       var loggedUserCredential = new LoggedUserCredential();
 
-      var hashPassword = _cryptographyService.GenerateHash(payload.Password);
+      var hashPassword = _cryptographyService.GenerateHash(password);
       
-      var user = _userRepository.Get(payload.UserName, hashPassword);
+      var user = _userRepository.Get(userName, hashPassword);
 
       if (user == null) return StatusCode(401, new { message = "Login ou/e senha é inválido" });
 

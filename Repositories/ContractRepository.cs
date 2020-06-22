@@ -58,7 +58,7 @@ namespace NorusContract.Data.Repository
     {
       return (from contract in _context.Contracts
         where
-          contract.ContractName.ToLower().Contains(keyword.ToLower())
+          contract.CustomerName.ToLower().Contains(keyword.ToLower())
           || contract.NegotiatedValue.ToString().Equals(keyword)
           || (keyword.ToLower().Equals("compra") && contract.ContractType.Equals("BUY"))
           || (keyword.ToLower().Equals("venda") && contract.ContractType.Equals("SELL"))
